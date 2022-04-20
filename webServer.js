@@ -1,9 +1,8 @@
-import express from "express";
-import path from "path";
-import fs from "fs/promises";
+const express = require("express");
+const path = require("path");
+const fs = require("fs/promises");
 const PORT = process.env.PORT ?? 5555;
 const app = express();
-const __dirname = path.resolve();
 
 app.use(express.static(path.resolve(__dirname, "testSite")));
 const logsPath = path.resolve(__dirname, "testSite/logs/", "logs.txt");

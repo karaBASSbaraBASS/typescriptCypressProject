@@ -9,7 +9,8 @@
 		"types": [
 			"cypress",
 			"cypress-axe"
-		]
+		],
+		"module": "commonjs",
 	},
 	"include": [
 		"**/*.ts"

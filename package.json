@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "cypress e2e tests with TypeScript",
   "main": "webServer.js",
-  "type": "module",
   "scripts": {
     "start": "nodemon webServer.js & wait-on http://localhost:5555",
     "cypress:open": "cypress open",
