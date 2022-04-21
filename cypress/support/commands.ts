@@ -66,7 +66,7 @@ Cypress.Commands.add("customCheckAlly", () => {
         name: `${severityIndicatorIcons[violation.impact]} AllY`,
         consoleProps: () => violation,
         $el: nodes,
-        message: `[${violation.help}](${violation.helpUrl})`,
+				message: `[${violation.help}](${violation.helpUrl})`,
       });
 
       violation.nodes.forEach(({ target }) => {
