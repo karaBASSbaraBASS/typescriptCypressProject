@@ -19,7 +19,7 @@ import "./commands";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 import "cypress-axe";
-import "./commands";
+import 'cypress-mochawesome-reporter/register';
 
 declare global {
   namespace Cypress {

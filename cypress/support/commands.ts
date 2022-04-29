@@ -23,6 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import { keys } from "cypress/types/lodash";
+
 // 5. Get Text Value Command
 Cypress.Commands.add("getText", { prevSubject: "element" }, (prevSub) => {
   // return prevSub.text();
@@ -56,29 +59,36 @@ Cypress.Commands.add("customCheckAlly", () => {
     critical: "⛔ critical",
   };
 
-  function callback(violations) {
-    violations.forEach((violation) => {
+	function callback(violations) {
+		let violationList = [];
+		violations.forEach((violation) => {
       const nodes = Cypress.$(
         violation.nodes.map((node) => node.target).join(",")
-      );
-
-      Cypress.log({
-        name: `${severityIndicatorIcons[violation.impact]} AllY`,
+			);
+			let violationGeneral = {
+				name: `${severityIndicatorIcons[violation.impact]} AllY`,
         consoleProps: () => violation,
         $el: nodes,
-        message: `[${violation.help}](${violation.helpUrl})`,
-      });
+				message: `[${violation.help}](${violation.helpUrl})`,
+			}
+			violationList.push(violationGeneral);
+      Cypress.log(violationGeneral);
 
-      violation.nodes.forEach(({ target }) => {
-        Cypress.log({
+			violation.nodes.forEach(({ target }) => {
+				let violationDetails = {
           name: "▶",
           consoleProps: () => violation,
           $el: Cypress.$(target.join(",")),
           message: target,
-        });
-      });
-    });
+				}
+				violationList.push(violationDetails);
+        Cypress.log(violationDetails);
+				//assert.notExists(violation, `${violation.help} --- ${target}`);
+				console.error(`▶ violation = ${violation.help} target = ${target}`);
+			});
+		});
+		assert.notExists(violations, `${violationList.map((item)=>`${item.name} ${item.message}`)} \\n \\n`);
   }
 
-  cy.checkA11y(null, null, callback);
+	cy.checkA11y(null, null, callback);
 });

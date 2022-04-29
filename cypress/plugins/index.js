@@ -19,4 +19,17 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+  //const options = { recordLogs: true };
+  //require("cypress-log-to-output").install(on, options);
+  require("cypress-mochawesome-reporter/plugin")(on);
+  on("task", {
+    log(message) {
+      console.log(message);
+      return null;
+    },
+    table(message) {
+      console.table(message);
+      return null;
+    },
+  });
+};
