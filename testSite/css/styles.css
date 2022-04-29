@@ -1,3 +1,88 @@
+.visuallyhidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	padding: 0;
+	border: 0;
+}
+
+.visuallyhidden:focus {
+	clip: auto;
+	height: auto;
+	width: auto;
+}
+
+*:focus {
+	outline: 2px dashed red;
+	outline: 2px dashed -webkit-focus-ring-color;
+	border-radius: 2px;
+}
+
+/* color correction */
+.hero.is-info,
+.button.is-info {
+	background-color: #0A5A8F !important;
+}
+.hero.is-info .tabs.is-boxed li.is-active a,
+.hero.is-info .tabs.is-boxed li.is-active a:hover,
+.hero.is-info .tabs.is-toggle li.is-active a,
+.hero.is-info .tabs.is-toggle li.is-active a:hover{
+	color: #0A5A8F !important;
+}
+.hero.is-info .subtitle,
+.hero-body .subtitle {
+	color: #ffffff !important;
+}
+.subtitle {
+	color: #292929 !important;
+}
+.has-text-grey-light {
+	color: #595959 !important;
+}
+.tag:not(body).is-danger {
+	color: #000000;
+	background-color: red;
+}
+.help.is-danger {
+	color: #B30000;
+}
+.tag:not(body).is-primary {
+	color: #000000;
+	background-color: #00D1B2;
+}
+.tag:not(body).is-success {
+	color: #000000;
+	background-color: #23D160;
+}
+.help.is-success {
+	color: #0C642E;
+}
+a {
+	color: #1D53AA;
+}
+fieldset.is-grouped{
+	border-radius: 6px;
+}
+#emailInput{
+	width: 100%;
+	border: none;
+	padding: 0 10px;
+}
+label.control.is-expanded {
+	align-items: center;
+	display: flex;
+}
+/* color correction end*/
+
+.accessibility__cta {
+	display: none;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/accessibility-hero-banner.jpg") no-repeat center center fixed;
