@@ -7,8 +7,12 @@
 			"esnext"
 		],
 		"types": [
+			"node",
 			"cypress",
 			"cypress-axe"
+		],
+		"typeRoots": [
+			"../node_modules/@types"
 		],
 		"module": "commonjs",
 	},

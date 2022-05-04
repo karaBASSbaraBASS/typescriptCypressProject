@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/mochawesome": "^6.2.1",
+    "@types/node": "^17.0.31",
     "axe-core": "^4.4.1",
     "cypress-axe": "^0.14.0",
     "cypress-fail-on-console-error": "^2.1.3",
