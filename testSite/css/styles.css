@@ -19,7 +19,23 @@
 	outline: 2px dashed -webkit-focus-ring-color;
 	border-radius: 2px;
 }
-
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #BF1722;
+	color: white;
+	padding: 8px;
+	border-radius: 5px;
+	z-index: 100;
+	transition: all 1s ease-out;
+}
+.skip-link:focus {
+	top: 0;
+}
+.content pre{
+	overflow-x: scroll;
+}
 /* color correction */
 .hero.is-info,
 .button.is-info {

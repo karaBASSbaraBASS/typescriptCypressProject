@@ -13,4 +13,8 @@ describe('example to-do app', () => {
 	it.only('check general acessability on a page', () => { 
 		cy.customCheckAlly();
 	})
+	// addtest - all select should have name attribute and label
+	// all labels should have for attribute with the existing ID
+	// inputs and buttons should have lables
+	//
 })
